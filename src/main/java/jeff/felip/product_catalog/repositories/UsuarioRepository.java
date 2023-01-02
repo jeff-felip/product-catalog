@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface UsuarioRepository extends JpaRepository <Usuario, Long> {
 
-    @Query(value = "select * from usuario u where u.name ilike %?1%", nativeQuery = true)
+    @Query(value = "select * from usuario u where u.name ilike ?1%", nativeQuery = true)
     List<Usuario> findUsuarioByName(String name);
 }
